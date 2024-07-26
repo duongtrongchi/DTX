@@ -1,0 +1,5 @@
+model_id: "meta-llama/Llama-Guard-3-8B"
+device: "cuda"
+bnb_4bit_quant_type: "nf4"
+bnb_4bit_use_double_quant: True
+load_in_4bit: True
