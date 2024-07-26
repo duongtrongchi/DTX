@@ -83,4 +83,4 @@ class Evaluation:
             {"role": "user", "content": user_input}
         ]
 
-model = Evaluation()
+
