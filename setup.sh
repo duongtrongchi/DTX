@@ -1,3 +1,3 @@
 cd DTX
 
-pip install -r -U requirements.txt
+pip install -U -r ./DTX/requirements.txt
