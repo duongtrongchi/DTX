@@ -9,7 +9,7 @@ import yaml
 
 
 def load_config(config_name):
-    with open(f'./{config_name}') as file:
+    with open(f'./DTX/{config_name}') as file:
         yaml_data = yaml.safe_load(file)
     return yaml_data
 
@@ -21,7 +21,7 @@ class Evaluation:
     def __init__(
             self,
             model_id=config['model_id'],
-            device=config['cuda'],
+            device=config['device'],
             dtype=torch.float16,
             bnb_4bit_quant_type=config['bnb_4bit_quant_type'],
             bnb_4bit_use_double_quant=config['bnb_4bit_use_double_quant'],
