@@ -3,7 +3,7 @@ import json
 from tqdm import tqdm
 
 
-from evaluation_toxic import Evaluation
+from .evaluation_toxic import Evaluation
 
 
 class ToxicBenchmark:
