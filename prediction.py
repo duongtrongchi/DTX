@@ -66,7 +66,7 @@ if __name__ == "__main__":
     dataset = load_dataset("parquet", data_files=f"./{args.data_files}", split="train")
     for i in tqdm(dataset, desc="Processing dataset"):
         response = model.predict(i['prompt'])
-        with open(f'./{args.file_name}.jsonl', 'a', encoding='utf8') as f:
+        with open(f'../predicted/{args.file_name}.jsonl', 'a', encoding='utf8') as f:
             f.write(json.dumps({
                 "prompt": i['prompt'],
                 "response": response,
