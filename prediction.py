@@ -59,7 +59,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run benchmark on dataset")
     parser.add_argument('--model_id', type=str, default=None, help='Name of the model')
     parser.add_argument('--data_files', type=str, default="benchmark.parquet", help='Path to the dataset file')
-    parser.add_argument('--file_name', type=str, default="result", help='Name of the output file')
+    parser.add_argument('--file_name', type=str, default=None, help='Name of the output file')
     args = parser.parse_args()
 
     model = Model(model_id=args.model_id, max_seq_length=2048, device="cuda")
