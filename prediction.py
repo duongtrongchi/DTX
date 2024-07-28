@@ -65,12 +65,15 @@ if __name__ == "__main__":
     model = Model(model_id=args.model_id, max_seq_length=2048, device="cuda")
     dataset = load_dataset("parquet", data_files=f"./{args.data_files}", split="train")
     for i in tqdm(dataset, desc="Processing dataset"):
-        response = model.predict(i['prompt'])
-        with open(f'../predicted/{args.file_name}.jsonl', 'a', encoding='utf8') as f:
-            f.write(json.dumps({
-                "prompt": i['prompt'],
-                "response": response,
-            }, ensure_ascii=False) + '\n')
+        try:
+            response = model.predict(i['prompt'])
+            with open(f'../predicted/{args.file_name}.jsonl', 'a', encoding='utf8') as f:
+                f.write(json.dumps({
+                    "prompt": i['prompt'],
+                    "response": response,
+                }, ensure_ascii=False) + '\n')
+        except Exception as e:
+            print(e)
 
 
 
