@@ -76,7 +76,7 @@ class Prediction_Pipeline:
         eos_token = self.gen_tokenizer(self.gen_tokenizer.eos_token,add_special_tokens=False)["input_ids"][0]
         generated_ids = self.gen_model.generate(
             input_ids,
-            max_new_tokens=512,
+            max_new_tokens=256,
             repetition_penalty=1.05,
             temperature=0.7,
             top_k=50,
